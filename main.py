@@ -36,3 +36,15 @@ def get_codex(message):
     bot.send_message(message.chat.id,
     f'```python\n{response["choices"][0]["text"]}\n```',
     parse_mode="Markdown")
+
+# Función principal
+def main():
+    # Eliminar webhook antes de empezar el sondeo
+    bot.delete_webhook()
+
+    # Iniciar el bot
+    bot.polling(none_stop=True)
+
+
+if __name__ == "__main__":
+    main()
